@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
   background-color: #f3f4f6;
   color: #333;
-  padding-top: 60px; /* espace pour navbar fixe */
+  padding-top: 60px;
 }
 
 /* === NAVBAR === */
@@ -90,7 +90,7 @@ body {
   }
 }
 
-/* === HEADER / ACCUEIL === */
+/* === HEADER === */
 #accueil {
   background-color: #4a148c;
   color: white;
@@ -120,7 +120,7 @@ body {
   color: #ddd;
 }
 
-/* === PHOTO PROFIL CENTRÉE AVEC GLOW === */
+/* === PHOTO PROFIL === */
 .photo-wrapper {
   position: absolute;
   bottom: -80px;
@@ -148,7 +148,6 @@ body {
   transform: scale(1.05);
 }
 
-/* === ANIMATION PHOTO === */
 @keyframes floatIn {
   0% {
     transform: translateX(-50%) translateY(30px);
@@ -160,7 +159,7 @@ body {
   }
 }
 
-/* === SECTIONS GÉNÉRALES === */
+/* === SECTIONS === */
 section {
   padding-top: 120px;
   padding-bottom: 60px;
@@ -215,12 +214,6 @@ h2 {
   padding: 20px 0;
 }
 
-@media (max-width: 768px) {
-  .competence-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .competence {
   display: flex;
   justify-content: center;
@@ -230,7 +223,7 @@ h2 {
 
 .competence img {
   width: 150px;
-  height: 150px;
+  height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.25));
@@ -238,6 +231,17 @@ h2 {
 
 .competence:hover img {
   transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .competence-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ deux par ligne même sur mobile */
+    gap: 20px;
+  }
+
+  .competence img {
+    width: 120px;
+  }
 }
 
 /* === FORMULAIRE === */
@@ -280,7 +284,7 @@ footer {
   font-size: 0.9em;
 }
 
-/* === ANIMATIONS GÉNÉRALES === */
+/* === ANIMATIONS === */
 .fade-section {
   opacity: 0;
   transform: translateY(30px);
